@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     print("build() 메서드 호출 확인");
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: StorePage(),
     );
   }
@@ -36,13 +37,49 @@ class StorePage extends StatelessWidget {
         child: Column(
           children: [
             // 1번 자식
-            Row(
-              children: [
-                Text('Woman'),
-                Text('Kids'),
-                Text('Shoes'),
-                Text('Bag'),
-              ],
+            Padding(
+              padding: EdgeInsets.all(25.0),
+              child: Row(
+                children: [
+                  Text(
+                    'Woman',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                  Spacer(),
+                  Text(
+                    'Kids',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                  Spacer(),
+                  Text(
+                    'Shoes',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                  Spacer(),
+                  Text('Bag',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      )),
+                ],
+              ),
+            ),
+            Image.asset(
+              "assets/bag.jpeg",
+              fit: BoxFit.cover,
+            ),
+            Image.asset(
+              "assets/cloth.jpeg",
+              fit: BoxFit.cover,
             ),
           ],
         ),
